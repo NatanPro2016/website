@@ -1,3 +1,4 @@
 django
 django-import-export
 django-jazzmin
+gunicorn
