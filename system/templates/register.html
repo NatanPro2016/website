@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="footer" class="reveal">
+  <div class="inner reveal-element">
+    <a href="/"
+      ><img width="200px" src=" {% static 'images/logo.png' %}" alt=""
+    /></a>
+    <h1>Apply</h1>
+  </div>
+</section>
+
+<section id="one" class="main style1">
+  <div class="container">
+    <div class="row gtr-150">
+      <div class="col-6 col-12-medium">
+        <h1>Apply</h1>
+        <form method="post" action="/system/register/" id="form_a">
+          {% csrf_token %}
+          <p id="error_a">{{message}}</p>
+          <div class="row gtr-uniform gtr-50">
+            <div class="d-flx col-12 col-12-xsmall">
+              <input
+                class="m-1"
+                type="text"
+                placeholder="First Name"
+                name="first_name"
+                id="first_name"
+              />
+              <input
+                class="m-1"
+                type="text"
+                placeholder="MIdle Name"
+                name="middle_name"
+                id="middle_name"
+              />
+              <input
+                class="m-1"
+                type="text"
+                placeholder="Last Name"
+                name="last_name"
+                id="last_name"
+              />
+            </div>
+            <div class="col-12">
+              <select name="sex" id="sex" class="m-1">
+                <option value="">- Sex -</option>
+                <option value="Male">Female</option>
+                <option value="Female">Male</option>
+              </select>
+            </div>
+            <div class="col-12 col-12-xsmall d-flx">
+              <input
+                type="email"
+                class="m-1"
+                name="email"
+                id="email_a"
+                placeholder="Email"
+              />
+              <input
+                type="tel"
+                class="m-1"
+                name="phone_number"
+                id="phone"
+                placeholder="Phone "
+              />
+              <div class="l"></div>
+            </div>
+            <div class="col-12">
+              <select name="sector" id="sector" class="m-1">
+                <option value="">- Department -</option>
+
+                {%for sector in sectors %}
+                <option value="{{ sector.id }}">
+                  {{ sector.title }} , {{sector.type}}
+                </option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-12">
+              <select name="type" id="type" class="m-1">
+                <option value="">- Program Type -</option>
+                <option value="RE">Regular</option>
+                <option value="EX">Extension</option>
+                <option value="WE">Weekend</option>
+              </select>
+            </div>
+
+            <div class="col-12 m-1">
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Send Message" class="primary" />
+                </li>
+                <li><input type="reset" value="Reset" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-6 col-12-medium imp-medium">
+        <span class="image fit"
+          ><img
+            src="{% static 'images/feature.jpg' %}"
+            style="margin-top: 100px"
+            alt=""
+        /></span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Apply End -->
+
+{% endblock %}

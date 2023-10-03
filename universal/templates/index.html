@@ -1,0 +1,210 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<script src="{% static 'js/script.js' %}" defer></script>
+
+<!-- Header -->
+<section id="footer" class="reveal">
+  <div class="inner reveal-element" style="z-index: 20">
+    <a href="/"
+      ><img width="200px" src="{% static 'images/logo.png' %}" alt=""
+    /></a>
+    <h1>Universal College <br /></h1>
+    <p>
+      Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
+      lobortis feugiat sapien sed etiam volutpat accumsan.
+    </p>
+    <ul class="actions special">
+      <li><a href="/news" class="button scrolly">Read News</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- One -->
+<section id="one" class="main style1">
+  <div class="container">
+    <div class="row gtr-150">
+      <div class="col-6 col-12-medium">
+        <header class="major">
+          <h2>About Us</h2>
+        </header>
+        <p>
+          Adipiscing a commodo ante nunc accumsan et interdum mi ante
+          adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus
+          nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing
+          id accumsan.
+        </p>
+      </div>
+      <div class="col-6 col-12-medium imp-medium">
+        <span class="image fit"
+          ><a href="/"><img src="{% static 'images/about.jpg' %}" alt="" /></a
+        ></span>
+      </div>
+      s
+    </div>
+  </div>
+</section>
+
+<!-- Two -->
+<section id="two" class="main style2">
+  <div class="container">
+    <div class="row gtr-150">
+      <div class="col-6 col-12-medium">
+        <ul class="major-icons">
+          <li><span class="icon solid style1 major fa-code"></span></li>
+          <li><span class="icon solid style2 major fa-bolt"></span></li>
+          <li>
+            <span class="icon solid style3 major fa-camera-retro"></span>
+          </li>
+          <li><span class="icon solid style4 major fa-cog"></span></li>
+          <li><span class="icon solid style5 major fa-desktop"></span></li>
+          <li><span class="icon solid style6 major fa-calendar"></span></li>
+        </ul>
+      </div>
+      <div class="col-6 col-12-medium">
+        <header class="major">
+          <h2>
+            Fetures <br />
+            why choose us
+          </h2>
+        </header>
+        <p>
+          Blandit faucibus proin. Ac aliquam integer adipiscing enim non
+          praesent vis commodo nunc phasellus cubilia ac risus accumsan.
+          Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius
+          accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper
+          morbi col faucibus vitae integer placerat accumsan orci eu mi odio
+          tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam
+          dolore.
+        </p>
+        <p>
+          Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A
+          nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non.
+          Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan
+          adipiscing ipsum.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three -->
+<section id="three" class="main style1 special">
+  <div class="container">
+    <header class="major">
+      <h2>Services</h2>
+    </header>
+    <p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
+    <div class="row gtr-150">
+      <div class="col-4 col-12-medium">
+        <h3>Regular</h3>
+        <ul>
+          {% for sector in sectors %} {% if sector.type == 'RE'%}
+
+          <li>{{sector.title}}</li>
+
+          {% endif %} {% endfor%}
+        </ul>
+      </div>
+      <div class="col-4 col-12-medium">
+        <h3>Extenstion</h3>
+        <ul>
+          {% for sector in sectors %} {% if sector.type == 'EX'%}
+
+          <li>{{sector.title}}</li>
+
+          {% endif %} {% endfor%}
+        </ul>
+      </div>
+      <div class="col-4 col-12-medium">
+        <h3>Weekend</h3>
+        <ul>
+          {% for sector in sectors %} {% if sector.type == 'WE'%}
+
+          <li>{{sector.title}}</li>
+
+          {% endif %} {% endfor%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Four -->
+<section id="four" class="main style2 special">
+  <div class="container">
+    <header class="major">
+      <h2>Apply</h2>
+    </header>
+    <p>
+      we understand the importance of providing a seamless and efficient
+      learning experience for students. To achieve this, we have developed an
+      application form that allows students to express their desire to learn and
+      provides us with valuable insights into their educational needs. It
+      includes fields such as personal details (name, contact information),
+      areas of interest or subjects they wish to study..
+    </p>
+    <ul class="actions special">
+      <li>
+        <a href="/system/register" class="button wide primary">Apply now</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section id="one" class="main style1">
+  <div class="container">
+    <div class="row gtr-150">
+      <div class="col-6 col-12-medium imp-medium">
+        <span class="image fit"
+          ><img
+            src="{% static 'images/istockphoto-1444195983-170667a.webp' %}"
+            style="margin-top: 100px"
+            class=""
+            alt=""
+        /></span>
+      </div>
+      <div class="col-6 col-12-medium">
+        <h1>Leave a message</h1>
+        <form method="post" action="/" id="form">
+          <p id="error">{{message}}</p>
+          {% csrf_token %}
+          <div class="row gtr-uniform gtr-50">
+            <div class="col-6 col-12-xsmall">
+              <input
+                type="text"
+                placeholder="Name"
+                name="full_name"
+                id="name"
+              />
+            </div>
+            <div class="col-6 col-12-xsmall">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value=""
+                placeholder="Email"
+              />
+            </div>
+
+            <div class="col-12">
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Enter your message"
+                rows="6"
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Send Message" class="primary" />
+                </li>
+                <li><input type="reset" value="Reset" /></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

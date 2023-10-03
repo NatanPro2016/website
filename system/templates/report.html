@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section id="footer" class="reveal">
+  <div class="inner reveal-element">
+    <a href="/"
+      ><img width="200px" src=" {% static 'images/logo.png' %}" alt=""
+    /></a>
+    <h1>report</h1>
+  </div>
+</section>
+<section style="height: 800px; width: 100vw; display;flex; justify-content: center;">
+    <div
+    style="height: 600px; width: 100vw; display;flex; justify-content: center;"
+    > <h1> Regular</h2>
+        <canvas id="chart"> </canvas>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("chart");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+         
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+</script>
+
+{% endblock %}
