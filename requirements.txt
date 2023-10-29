@@ -1,4 +1,4 @@
-django
+django==3.2.9
 django-import-export
 django-jazzmin
 gunicorn
