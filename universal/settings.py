@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'universal.apps.UniversalConfig',
     'django.contrib.sites,
     "django_check_seo",
+    'cms',
+    'menus',
+    'treebeard',
 
 ]
 SIDE_ID = 1
