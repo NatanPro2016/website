@@ -3,3 +3,4 @@ django-import-export
 django-jazzmin
 gunicorn
 whitenoise
+django-check-seo
