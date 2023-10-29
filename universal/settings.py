@@ -42,12 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'system.apps.SystemConfig',
     'universal.apps.UniversalConfig',
-    'django.contrib.sites',
-    'django_check_seo',
-    'cms',
-    'menus',
-    'treebeard',
-
 ]
 SIDE_ID = 1
 
