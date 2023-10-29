@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'system.apps.SystemConfig',
     'universal.apps.UniversalConfig',
     'django.contrib.sites,
-    "django_check_seo",
+    'django_check_seo',
     'cms',
     'menus',
     'treebeard',
