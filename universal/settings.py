@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'system.apps.SystemConfig',
-    'universal.apps.UniversalConfig'
+    'universal.apps.UniversalConfig',
+    "django_check_seo",
 
 ]
 
