@@ -23,6 +23,8 @@ urlpatterns = [
     path('system/', include('system.urls')),
     path('', views.index),
     path('news/', views.news),
+    path("django-check-seo/", include("django_check_seo.urls")),
+
    
 
 ]
